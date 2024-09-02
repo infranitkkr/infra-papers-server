@@ -1,16 +1,18 @@
 import { faFile } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
+import FileViewer from "./fileViewer"
 
-export default function File({ file }) {
+export default function File({ file ,openFile}) {
+  function opf(){
+    openFile(file.url);
+  }
+  
   return (
-    <a
-      href={file.url}
-      target="_blank"
-      className="btn btn-outline-dark text-truncate w-100"
-    >
-      <FontAwesomeIcon icon={faFile} className="mr-2" />
-      {file.name}
-    </a>
+    
+    <div className="btn btn-outline-dark text-truncate w-100" onClick={opf}>
+          <FontAwesomeIcon icon={faFile} className="mr-2" />
+          {file.name}
+    </div>
   )
 }

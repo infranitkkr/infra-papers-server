@@ -81,7 +81,8 @@ export function useFolder(folderId = null, folder = null) {
   useEffect(() => {
     return database.folders
       .where("parentId", "==", folderId)
-      .where("userId", "==", currentUser.uid)
+      .where("userId", "==", "2h6wQHR3PbTKbW27kQ4DB2hzFbg2")
+      // .where("userId", "==", currentUser.uid)
       .orderBy("createdAt")
       .onSnapshot(snapshot => {
         dispatch({
@@ -95,7 +96,8 @@ export function useFolder(folderId = null, folder = null) {
     return (
       database.files
         .where("folderId", "==", folderId)
-        .where("userId", "==", currentUser.uid)
+        .where("userId", "==", "2h6wQHR3PbTKbW27kQ4DB2hzFbg2")
+        // .where("userId", "==", currentUser.uid)
         // .orderBy("createdAt")
         .onSnapshot(snapshot => {
           dispatch({
